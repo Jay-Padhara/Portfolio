@@ -1,12 +1,5 @@
-import React from "react";
+import { FaGithub, FaHeart, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { personalInfo } from "../data/portfolioData";
-import {
-  FaGithub,
-  FaLinkedin,
-  FaInstagram,
-  FaTwitter,
-  FaHeart,
-} from "react-icons/fa";
 import "./Footer.css";
 
 export default function Footer() {

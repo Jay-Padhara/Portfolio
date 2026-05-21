@@ -144,7 +144,7 @@ export default function Hero() {
         {/* CTA Buttons */}
         <motion.div className="hero__ctas" variants={itemVariants}>
           <motion.a
-            href={personalInfo.resumeUrl}
+            href="/JayPadhara_Resume_EN.pdf"
             download
             className="btn-neon hero__btn"
             whileHover={{ scale: 1.05, y: -2 }}

@@ -1,48 +1,51 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { personalInfo } from '../data/portfolioData';
-import './Navbar.css';
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { personalInfo } from "../data/portfolioData";
+import "./Navbar.css";
 
 const navLinks = [
-  { label: 'Home',       href: '#home' },
-  { label: 'About',      href: '#about' },
-  { label: 'Skills',     href: '#skills' },
-  { label: 'Projects',   href: '#projects' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Contact',    href: '#contact' },
+  { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
+  { label: "Skills", href: "#skills" },
+  { label: "Projects", href: "#projects" },
+  { label: "Experience", href: "#experience" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const [active, setActive]     = useState('home');
+  const [active, setActive] = useState("home");
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   const handleNav = (href) => {
     setMobileOpen(false);
-    setActive(href.replace('#', ''));
-    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+    setActive(href.replace("#", ""));
+    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <>
       <motion.nav
-        className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}
+        className={`navbar ${scrolled ? "navbar--scrolled" : ""}`}
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, ease: 'easeOut' }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <div className="navbar__inner">
           {/* Logo */}
           <motion.a
             href="#home"
             className="navbar__logo"
-            onClick={(e) => { e.preventDefault(); handleNav('#home'); }}
+            onClick={(e) => {
+              e.preventDefault();
+              handleNav("#home");
+            }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
           >
@@ -62,8 +65,11 @@ export default function Navbar() {
               >
                 <a
                   href={link.href}
-                  className={`nav-link ${active === link.href.replace('#','') ? 'nav-link--active' : ''}`}
-                  onClick={(e) => { e.preventDefault(); handleNav(link.href); }}
+                  className={`nav-link ${active === link.href.replace("#", "") ? "nav-link--active" : ""}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNav(link.href);
+                  }}
                 >
                   <span className="nav-link__num">0{i + 1}.</span>
                   {link.label}
@@ -74,7 +80,7 @@ export default function Navbar() {
 
           {/* Resume CTA */}
           <motion.a
-            href={personalInfo.resumeUrl}
+            href="/JayPadhara_Resume_EN.pdf"
             download
             className="btn-neon navbar__resume"
             whileHover={{ scale: 1.05 }}
@@ -88,11 +94,13 @@ export default function Navbar() {
 
           {/* Hamburger */}
           <button
-            className={`hamburger ${mobileOpen ? 'hamburger--open' : ''}`}
+            className={`hamburger ${mobileOpen ? "hamburger--open" : ""}`}
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
-            <span /><span /><span />
+            <span />
+            <span />
+            <span />
           </button>
         </div>
       </motion.nav>
@@ -102,10 +110,10 @@ export default function Navbar() {
         {mobileOpen && (
           <motion.div
             className="mobile-menu"
-            initial={{ opacity: 0, x: '100%' }}
+            initial={{ opacity: 0, x: "100%" }}
             animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: '100%' }}
-            transition={{ duration: 0.35, ease: 'easeInOut' }}
+            exit={{ opacity: 0, x: "100%" }}
+            transition={{ duration: 0.35, ease: "easeInOut" }}
           >
             <ul>
               {navLinks.map((link, i) => (
@@ -117,7 +125,10 @@ export default function Navbar() {
                 >
                   <a
                     href={link.href}
-                    onClick={(e) => { e.preventDefault(); handleNav(link.href); }}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNav(link.href);
+                    }}
                   >
                     <span className="nav-link__num">0{i + 1}.</span>
                     {link.label}

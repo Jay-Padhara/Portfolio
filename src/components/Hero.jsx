@@ -102,7 +102,7 @@ export default function Hero() {
           <span>{personalInfo.availability}</span>
         </motion.div>
         <motion.p className="hero__greeting" variants={itemVariants}>
-          <span className="neon-text-cyan">// </span>
+          <span className="neon-text-cyan">{"// "} </span>
           hello_world() → Welcome
         </motion.p>
         <motion.h1 className="hero__name" variants={itemVariants}>

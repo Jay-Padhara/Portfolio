@@ -225,7 +225,7 @@ export default function Contact() {
               autoComplete="off"
             >
               <div className="form__title">
-                <span className="neon-text-cyan">// </span>send_message()
+                <span className="neon-text-cyan">{"// "} </span>send_message()
               </div>
 
               <div className="form__row">

@@ -196,3 +196,15 @@
     transform: rotate(360deg);
   }
 }
+
+.input-error {
+  border: 1px solid #ff4d4f !important;
+  box-shadow: 0 0 8px rgba(255, 77, 79, 0.4);
+}
+
+.error-text {
+  color: #ff4d4f;
+  font-size: 0.85rem;
+  margin-top: 6px;
+  display: block;
+}

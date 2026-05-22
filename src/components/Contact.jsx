@@ -16,13 +16,9 @@ import { useInView } from "react-intersection-observer";
 import { personalInfo } from "../data/portfolioData";
 import "./Contact.css";
 
-// ─────────────────────────────────────────────
-// ⭐ PASTE YOUR EMAILJS KEYS HERE
-// ─────────────────────────────────────────────
 const EMAILJS_SERVICE_ID = "service_0t3ohva";
 const EMAILJS_PUBLIC_KEY = "8smi-585vmpuB9zHL";
 const EMAILJS_TEMPLATE_ID = "template_jrizw1l";
-// ─────────────────────────────────────────────
 
 const STATUS = {
   IDLE: "idle",
@@ -161,7 +157,6 @@ export default function Contact() {
         </motion.div>
 
         <div className="contact__grid">
-          {/* ── Left info panel ── */}
           <motion.div className="contact__info" variants={variants}>
             <p className="contact__intro">
               I'm actively looking for{" "}
@@ -222,7 +217,6 @@ export default function Contact() {
             </div>
           </motion.div>
 
-          {/* ── Right form ── */}
           <motion.div variants={variants}>
             <form
               ref={formRef}
@@ -237,7 +231,6 @@ export default function Contact() {
               <div className="form__row">
                 <div className="form__group">
                   <label className="form__label">Name</label>
-                  {/* name="from_name" must match your EmailJS template variable */}
                   <input
                     name="from_name"
                     value={form.name}
@@ -255,7 +248,6 @@ export default function Contact() {
                 </div>
                 <div className="form__group">
                   <label className="form__label">Email</label>
-                  {/* name="from_email" must match your EmailJS template variable */}
                   <input
                     type="email"
                     name="from_email"
@@ -276,7 +268,6 @@ export default function Contact() {
 
               <div className="form__group">
                 <label className="form__label">Subject</label>
-                {/* name="subject" must match your EmailJS template variable */}
                 <input
                   name="subject"
                   value={form.subject}
@@ -294,7 +285,6 @@ export default function Contact() {
 
               <div className="form__group">
                 <label className="form__label">Message</label>
-                {/* name="message" must match your EmailJS template variable */}
                 <textarea
                   name="message"
                   value={form.message}
@@ -312,7 +302,6 @@ export default function Contact() {
                 />
               </div>
 
-              {/* Status messages */}
               {status === STATUS.SUCCESS && (
                 <motion.div
                   className="form__status form__status--success"

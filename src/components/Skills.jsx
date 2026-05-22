@@ -6,7 +6,6 @@ import "./Skills.css";
 
 const categories = Object.keys(skills);
 
-// One icon/emoji per category — edit freely
 const categoryIcons = {
   "Programming Languages": "{ }",
   "Data & Machine Learning": "🧠",
@@ -34,7 +33,6 @@ export default function Skills() {
         animate={inView ? "visible" : "hidden"}
         variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
       >
-        {/* Header */}
         <motion.div
           className="section-header"
           variants={{
@@ -48,8 +46,6 @@ export default function Skills() {
           <div className="section-divider" />
           <p className="section-subtitle">{"// skills.map(s => s.name)"}</p>
         </motion.div>
-
-        {/* Category tabs */}
         <motion.div
           className="skills__tabs"
           variants={{
@@ -69,7 +65,6 @@ export default function Skills() {
           ))}
         </motion.div>
 
-        {/* Skill chips grid */}
         <motion.div
           className="skills__chips"
           key={active}
@@ -92,7 +87,6 @@ export default function Skills() {
           ))}
         </motion.div>
 
-        {/* All tech bubble cloud */}
         <motion.div
           className="skills__bubbles"
           variants={{
@@ -100,7 +94,8 @@ export default function Skills() {
             visible: { opacity: 1, transition: { duration: 0.6, delay: 0.3 } },
           }}
         >
-          <p className="bubbles__label">// all_technologies</p>
+          {/* <p className="bubbles__label">// all_technologies</p> */}
+          <p className="bubbles__label">all_technologies</p>
           <div className="bubbles__wrap">
             {Object.values(skills)
               .flat()

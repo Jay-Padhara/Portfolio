@@ -12,13 +12,11 @@ import { TypeAnimation } from "react-type-animation";
 import { personalInfo } from "../data/portfolioData";
 import "./Hero.css";
 
-// Build typewriter sequence from taglines array
 const buildTypeSequence = (taglines) => taglines.flatMap((t) => [t, 2000]);
 
 export default function Hero() {
   const canvasRef = useRef(null);
 
-  // Particle canvas
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -86,10 +84,8 @@ export default function Hero() {
 
   return (
     <section id="home" className="hero">
-      {/* Background canvas */}
       <canvas ref={canvasRef} className="hero__canvas" />
 
-      {/* Corner decorations */}
       <div className="hero__corner hero__corner--tl" />
       <div className="hero__corner hero__corner--tr" />
       <div className="hero__corner hero__corner--bl" />
@@ -101,19 +97,14 @@ export default function Hero() {
         initial="hidden"
         animate="visible"
       >
-        {/* Status badge */}
         <motion.div className="hero__badge" variants={itemVariants}>
           <span className="badge__dot" />
           <span>{personalInfo.availability}</span>
         </motion.div>
-
-        {/* Greeting */}
         <motion.p className="hero__greeting" variants={itemVariants}>
           <span className="neon-text-cyan">// </span>
           hello_world() → Welcome
         </motion.p>
-
-        {/* Name */}
         <motion.h1 className="hero__name" variants={itemVariants}>
           {personalInfo.name.split(" ").map((word, i) => (
             <span key={i} className={i === 1 ? "neon-text-cyan" : ""}>
@@ -122,7 +113,6 @@ export default function Hero() {
           ))}
         </motion.h1>
 
-        {/* Typewriter role */}
         <motion.div className="hero__roles" variants={itemVariants}>
           <span className="role-prefix">{">"} </span>
           <TypeAnimation
@@ -135,13 +125,10 @@ export default function Hero() {
           />
           <span className="cursor-blink">_</span>
         </motion.div>
-
-        {/* Bio */}
         <motion.p className="hero__bio" variants={itemVariants}>
           {personalInfo.bio}
         </motion.p>
 
-        {/* CTA Buttons */}
         <motion.div className="hero__ctas" variants={itemVariants}>
           <motion.a
             href="/JayPadhara_Resume_EN.pdf"
@@ -170,7 +157,6 @@ export default function Hero() {
           </motion.a>
         </motion.div>
 
-        {/* Social Links */}
         <motion.div className="hero__socials" variants={itemVariants}>
           {[
             {
@@ -205,7 +191,6 @@ export default function Hero() {
         </motion.div>
       </motion.div>
 
-      {/* Profile image */}
       <motion.div
         className="hero__avatar-wrap"
         initial={{ opacity: 0, x: 60 }}
@@ -224,7 +209,6 @@ export default function Hero() {
         <div className="avatar-glow" />
       </motion.div>
 
-      {/* Scroll indicator */}
       <motion.a
         href="#about"
         className="scroll-indicator"

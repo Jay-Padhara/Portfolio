@@ -1,14 +1,12 @@
-import React from "react";
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import { personalInfo, education } from "../data/portfolioData";
 import {
-  FaMapMarkerAlt,
   FaEnvelope,
-  FaPhone,
   FaGraduationCap,
-  FaCode,
+  FaMapMarkerAlt,
+  FaPhone,
 } from "react-icons/fa";
+import { useInView } from "react-intersection-observer";
+import { education, personalInfo } from "../data/portfolioData";
 import "./About.css";
 
 const traits = [
